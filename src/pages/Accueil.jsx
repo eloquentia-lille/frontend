@@ -1,7 +1,12 @@
+import Header from "../components/Header";
+
 function Accueil() {
 
     return (
-        <h1>Page d'Accueil</h1>
+        <section>
+            <h1>Page d'Accueil</h1>
+        </section>
+        
     );
 }
 

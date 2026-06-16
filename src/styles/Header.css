@@ -1,0 +1,50 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    gap: 1.5em;
+
+    text-align:center;
+    font-size: 1.5em;
+
+    background-color: rgb(46, 46, 80);
+    border-radius: 10px;
+
+    padding: 10px;
+}
+
+.logo {
+    height: 70px;
+    border-radius: 10px;
+
+}
+
+.navLink {
+    background-color: #8D2E82;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.582) 0px 0px 5px 2px;
+
+    color: white;
+    
+
+    width: 10%;
+    height: 70px;
+}
+
+.navLink:hover {
+    background-color: #9e4694;
+}
+
+.activeLink {
+    background-color: #D8187E;
+    border-radius: 10px;
+    color: white;
+
+    box-shadow: rgba(0, 0, 0, 0.582) 0px 0px 5px 2px;
+    
+    width: 13%;
+    height: 70px;
+}
+
