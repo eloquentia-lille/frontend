@@ -1,6 +1,21 @@
 :root {
   --font-primary: 'Montserrat', sans-serif;
 
+  --color-dark: rgb(53, 54, 56);
+  --color-light: white;
+
+  --color-primary: #D8187F;
+  --color-primary-hl: #f351a7;
+  --color-primary-dk: #8f225c;
+
+  --color-secondary: #8D2E82;
+  --color-secondary-hl: #a52396;
+  --color-secondary-dk: #46294e;
+
+  --color-tertiary: #1800AD;
+  --color-tertiary-hl: #2528b9;
+  --color-tertiary-dk: #180e58;
+
   --bg-dark: rgb(41, 40, 43);
   --bg-light: white;
 }
