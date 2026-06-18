@@ -11,6 +11,10 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <App />
+            <App />
+      <App />
+      <App />
+
       <Myfooter />
     </BrowserRouter>
   </StrictMode>,
