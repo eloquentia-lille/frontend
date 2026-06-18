@@ -3,7 +3,16 @@ import logo from "../assets/temporaire_logo.PNG";
 import menuLogo from "../assets/temp_menu_logoPNG.PNG";
 import "../styles/Header.css";
 
+import { useState } from "react";
+
+
+
 function Header() {
+    const [show, setShow] = useState(false);
+    const toggle = () => setShow(!show);
+
+    const navClass = ({ isActive }) => isActive ? "activeLink" : "navLink";
+
     return(
         <header>
             <div className="logoContainer">
@@ -15,50 +24,45 @@ function Header() {
                         <img className="logo" src={logo} alt="logo-eloquentia" />
                 </NavLink>
 
-                <button className="menuButton">
+                <button 
+                onClick={toggle} 
+                aria-label="Ouvrir le menu"
+                className="menuButton">
                     <img className="menuLogo" src={menuLogo} alt="menu-logo" />
                 </button>
             </div>
-            
-            <div className="mobileNav">
+
+            <div 
+            className={show ? "menuOn" : "menuOff"}
+            >
                     <nav>
                         <NavLink 
                         to="/"
-                        className={({ isActive }) =>
-                            isActive ? "activeLink" : "navLink"
-                        }>
+                        className={navClass}>
                             Accueil
                         </NavLink>
                     
                         <NavLink 
                         to="/calendrier"
-                        className={({ isActive }) =>
-                            isActive ? "activeLink" : "navLink"
-                        }>
+                        className={navClass}>
                             Calendrier
                         </NavLink>
                     
                         <NavLink 
                         to="/actualite"
-                        className={({ isActive }) =>
-                            isActive ? "activeLink" : "navLink"
-                        }>
+                        className={navClass}>
                             Actualité
                         </NavLink>
                     
                         <NavLink 
                         to="/galerie"
-                        className={({ isActive }) =>
-                            isActive ? "activeLink" : "navLink"
-                        }>
+                        className={navClass}>
                             Galerie
                         </NavLink>
                     
                         <NavLink 
                         to="/contact"
-                        className={({ isActive }) =>
-                            isActive ? "activeLink" : "navLink"
-                        }>
+                        className={navClass}>
                             Contact
                         </NavLink>
                 </nav>

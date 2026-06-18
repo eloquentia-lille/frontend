@@ -75,6 +75,8 @@ nav > a, .logoContainer > a {
     justify-content: center;
     align-items: center;
 
+    gap: 10px;
+
     background-color: #00000042;
     border-color: white;
 
@@ -87,7 +89,6 @@ nav > a, .logoContainer > a {
 }
 
 
-
 @media screen and (max-width: 900px) {
     header {
         grid-template-columns: auto;
@@ -95,8 +96,13 @@ nav > a, .logoContainer > a {
         background-color: #00000042;
     }
 
-    .mobileNav {
+    .menuOn {
+        display: grid;
         border-radius: 5px;
+    }
+
+    .menuOff {
+        display: none;
     }
 
     nav {
@@ -111,8 +117,7 @@ nav > a, .logoContainer > a {
         gap: 1rem;
     }
 
-    .menuButton{
+    .menuButton {
         display: grid;
-        gap: 10px;
     }
 }
