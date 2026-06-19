@@ -28,7 +28,6 @@ function Myfooter() {
                     <a href="https://www.linkedin.com/in/eloquentia-lille-b1a5183b9/"><img src={linkedin} alt="Logo" /> </a>
                     <a href="https://www.instagram.com/eloquentia.lillemetropole/"><img src={instagram} alt="Logo" /> </a>
                     <a href="https://www.facebook.com/EloquentiaLille/"><img src={facebook} alt="Logo" /> </a>
-                    <a href="#"></a>
                 </div>
 
             </div>
@@ -60,7 +59,12 @@ function Myfooter() {
         </div>
 
 {/* TEST LIGNE FOOTER  */}
-{/* <div className="hline"><hr /></div> */}
+ {/* <div className="hline"><hr /></div>  */}
+
+
+        <div className="line-element">
+            <br></br>
+            </div>
 
         <div className="footer-2">
             <p>© Eloquentia, association de loi 1901. Tous droits réservés. Made by Oui </p>
