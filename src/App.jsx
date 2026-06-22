@@ -1,24 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { Routes, Route } from 'react-router-dom';
+
+import Header from './components/Header'
 import './App.css'
+import Accueil from './pages/Accueil';
+import Calendrier from './pages/Calendrier';
+import Actualite from './pages/Actualite';
+import Galerie from './pages/Galerie';
+import Contact from './pages/Contact';
 
 
 function App() {
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Hello World !</h1>
-        </div>
-      </section>
+      <main className="app">
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/calendrier" element={<Calendrier />} />
+          <Route path="/actualite" element={<Actualite />} />
+          <Route path="/galerie" element={<Galerie />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
     </>
 
   );
