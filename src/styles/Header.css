@@ -1,0 +1,125 @@
+header, nav {
+    display: grid;
+    grid-gap: 1vw;
+}
+
+header {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    background-color: var(--color-dark);
+    border-radius: 10px;
+
+    text-align:center;
+    font-size: 1.5em;
+}
+
+nav{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    margin: 1rem;
+}
+
+.navLink:hover {
+    background-color: var(--color-primary-hl);
+    outline: 3px solid white;
+    color: black;
+}
+
+nav > a, .logoContainer > a {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    background-color: var(--color-tertiary-dk);
+    box-shadow: rgba(0, 0, 0, 0.582) 0px 0px 8px 2px;
+
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+
+    color: white;
+    text-decoration: none;
+
+    height: 2em;
+}
+
+.activeLink, .logoContainer .activeLink{
+    grid-column: 1fr;
+
+    background-color: var(--color-primary);
+}
+
+.logoContainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: center;
+
+    padding: 5px;
+}
+
+.logoButton{
+    padding: 3px;
+}
+
+.logo {
+    border-radius: 10px;
+
+    height: 2em;
+}
+
+.menuButton, .menuLogo{
+    border-radius: 50%;
+}
+
+.menuButton {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: #00000042;
+    border-color: white;
+
+    width: 60px;
+    height: 60px;
+}
+
+.menuLogo{
+    width: 50px;
+}
+
+
+@media screen and (max-width: 900px) {
+    header {
+        grid-template-columns: auto;
+
+        background-color: #00000042;
+    }
+
+    .menuOn {
+        display: grid;
+        border-radius: 5px;
+    }
+
+    .menuOff {
+        display: none;
+    }
+
+    nav {
+        grid-template-rows: 1fr;
+    }
+
+    nav > a {
+        grid-column: 1/6;
+    }
+
+    .logoContainer{
+        gap: 1rem;
+    }
+
+    .menuButton {
+        display: grid;
+    }
+}
