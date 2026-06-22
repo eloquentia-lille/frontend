@@ -8,6 +8,7 @@ import Actualite from './pages/Actualite';
 import Galerie from './pages/Galerie';
 import Contact from './pages/Contact';
 
+
 function App() {
 
   return (
