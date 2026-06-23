@@ -161,6 +161,16 @@
   }
 }
 
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  flex: 1;
+}
+
 .ticks {
   position: relative;
   width: 100%;
