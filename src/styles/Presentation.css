@@ -1,0 +1,26 @@
+.presentation-bloc {
+    background-color: var(--color-tertiary-dk);
+
+    display: grid;
+    grid-template-rows: .5fr 1fr;
+
+    padding: 1%;
+    height: 20vh;
+
+    font-size: 1.2em;
+}
+
+.presentation-title {
+    font-size: 2em;
+}
+
+.presentation-title, .presentation-text {
+    color: white;
+    margin: 1%;
+}
+
+@media screen and (max-width: 900px) {
+    .presentation-bloc {
+    height: 30vh;
+    }
+}
