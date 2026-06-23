@@ -1,0 +1,22 @@
+.side-column {
+    background-color: rgb(221, 227, 233);
+}
+
+.actuality-page {
+    display: grid;
+    grid-template-columns: 15vw 1fr 15vw;
+}
+
+.list-actu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2%;
+    margin: 1%;
+}
+
+@media screen and (max-width: 900px) {
+    .actuality-page {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+}
