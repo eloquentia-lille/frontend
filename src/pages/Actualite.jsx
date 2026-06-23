@@ -1,11 +1,13 @@
 import "../styles/Actualite.css";
 
 import Card from "../components/Card";
+import Presentation from "../components/Presentation";
 
 //images test
 import cloud from "../assets/img_test/cloud.jpg";
 import train from "../assets/img_test/train.jpg";
 import landscape from "../assets/img_test/landscape.jpg";
+import { useState } from "react";
 
 
 function Actualite() {
@@ -76,8 +78,31 @@ function Actualite() {
             imgAlt={actu.imgAlt}
             />
         );
+    });
+
+
+    let listOnPage = [];
+
+    // Nombre d'actualités affichées par page
+    const nbActuOnPage = 2;
+    const [page, setPage] = useState(0);
+    
+    if (listActu.length - (page * nbActuOnPage) > 0){
+        listOnPage = listActu.slice((page * nbActuOnPage), (page+1) * nbActuOnPage);
     }
-    );
+
+
+    const nextPage = () => {
+        if (listActu.length - ((page+1) * nbActuOnPage) > 0) {
+            setPage(page + 1);
+        }
+    };
+
+    const prePage = () => {
+        if (page > 0 ) {
+            setPage(page - 1);
+        }
+    };
 
     return (
         <>
@@ -85,10 +110,31 @@ function Actualite() {
             <div className="side-column"></div>
 
             <section className="main-column">
-                <h1 className="title">Page des Actualités</h1>
+
+                <Presentation 
+                title="Bienvenue sur la page des Actualités !"
+                text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sit illum nulla deleniti minima beatae, rem illo culpa sunt corporis dolor incidunt delectus voluptatibus! Dolore architecto quas repellendus praesentium impedit."
+                />
 
                 <div className="list-actu">
-                    {listActu}
+                    {listOnPage}
+                </div>
+
+                <div className="page-button">
+
+                    <button 
+                    className="btn-prec"
+                    onClick={prePage}
+                    >
+                        préc
+                    </button>
+
+                    <button 
+                    className="btn-suiv"
+                    onClick={nextPage}
+                    >
+                        suiv
+                    </button>
                 </div>
             </section>
 

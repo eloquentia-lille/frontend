@@ -10,13 +10,41 @@
 .list-actu {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2%;
+    gap: 20px;
     margin: 1%;
+}
+
+.page-button {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr 0.2fr;
+    gap: 10px;
+
+    height: 10vh;
+    margin: 10px;
+}
+
+.btn-prec {
+    grid-column: 2/3;
+    
+}
+
+.btn-suiv {
+    grid-column: 3/3;
+}
+
+.btn-prec, .btn-suiv {
+    height: 3rem;
+    width: 10rem;
+}
+
+.btn-prec:hover, .btn-suiv:hover {
+    outline: 3px solid var(--color-tertiary-hl);
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 900px) {
     .actuality-page {
     display: grid;
     grid-template-columns: 1fr;
-}
+    }
 }
