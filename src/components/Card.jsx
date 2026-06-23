@@ -11,6 +11,9 @@ function Card(props) {
             />
         );
     }
+    else{
+        image = (<div className="no-img"></div>)
+    }
 
     return (
         <>
@@ -20,7 +23,7 @@ function Card(props) {
                 </div>
                 <div className="text-div">
                     <h2 className="card-title">{props.titre}</h2>
-                    <p className="card-date">{props.date}</p>
+                    <p className="card-date">Publié le {props.date}</p>
                     <p className="card-description">{props.description}</p>
                 </div>
             </section>
