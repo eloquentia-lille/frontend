@@ -6,6 +6,8 @@
 
     padding: 1%;
     height: 20vh;
+
+    font-size: 1.2em;
 }
 
 .presentation-title {
@@ -14,4 +16,11 @@
 
 .presentation-title, .presentation-text {
     color: white;
+    margin: 1%;
+}
+
+@media screen and (max-width: 900px) {
+    .presentation-bloc {
+    height: 30vh;
+    }
 }

@@ -84,7 +84,7 @@ function Actualite() {
     let listOnPage = [];
 
     // Nombre d'actualités affichées par page
-    const nbActuOnPage = 2;
+    const [nbActuOnPage, setNbActuOnPage] = useState(5);
     const [page, setPage] = useState(0);
     
     if (listActu.length - (page * nbActuOnPage) > 0){
@@ -104,6 +104,8 @@ function Actualite() {
         }
     };
 
+    let pageNb = Math.ceil(listActu.length / nbActuOnPage);
+
     return (
         <>
         <section className="actuality-page">
@@ -115,6 +117,22 @@ function Actualite() {
                 title="Bienvenue sur la page des Actualités !"
                 text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sit illum nulla deleniti minima beatae, rem illo culpa sunt corporis dolor incidunt delectus voluptatibus! Dolore architecto quas repellendus praesentium impedit."
                 />
+                <div className="select-div">
+                    <label>
+                        Actualités par page : 
+                        <select 
+                        name="nbActuOnPage"
+                        onChange={(event) => {
+                            setPage(0);
+                            setNbActuOnPage(parseInt(event.target.value));
+                        }}>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </label>
+                    
+                </div>
 
                 <div className="list-actu">
                     {listOnPage}
@@ -126,14 +144,18 @@ function Actualite() {
                     className="btn-prec"
                     onClick={prePage}
                     >
-                        préc
+                        Page précédente
                     </button>
+
+                    <div className="page-nb">
+                        <p>{page+1} / {pageNb}</p>
+                    </div>
 
                     <button 
                     className="btn-suiv"
                     onClick={nextPage}
                     >
-                        suiv
+                        Page suivante
                     </button>
                 </div>
             </section>
