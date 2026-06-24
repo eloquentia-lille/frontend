@@ -145,6 +145,11 @@
     white-space: nowrap;
 }
 
+a.active, .active {
+  font-weight: 700;
+  color: #fff; /* ou la couleur souhaitée */
+}
+
 
                                                     /* RESPONSIVE CSS  */
 

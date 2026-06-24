@@ -4,6 +4,7 @@ import linkedin from '../assets/linkedin-logo-linkedin-icon-transparent-free-png
 import facebook from '../assets/facebook-logo-facebook-icon-transparent-free-png.webp'
 import instagram from '../assets/instagram-logo-instagram-icon-transparent-free-png.webp'
 import logo from '../assets/Eloquentia-logo-white.svg';
+import { NavLink } from "react-router-dom";
 
 
 function Myfooter() {
@@ -38,12 +39,15 @@ function Myfooter() {
             <div className="colonne-2">
                 <h3>Nous</h3>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Notre Impact</a></li>
-                    <li><a href="#">Actualités</a></li>
-                    <li><a href="#">Galerie</a></li>
-                    <li><a href="#">Calendrier</a></li>
-                    <li><a href="#">Contact</a></li>
+                    {/* {({isActive}) => isActive ? 'active' : undefined} Si isActive est vrai alors renvoie 
+                        "active", sinon faux = undifined donc pas de changement 
+                        quand le lien est actif, css sur la classe <a></a>, donc surlignage */}
+    <li><NavLink to="/" end className={({isActive}) => isActive ? 'active' : undefined}>Accueil</NavLink></li>
+    <li><NavLink to="/impact" className={({isActive}) => isActive ? 'active' : undefined}>Notre Impact</NavLink></li>
+    <li><NavLink to="/actualite" className={({isActive}) => isActive ? 'active' : undefined}>Actualités</NavLink></li>
+    <li><NavLink to="/galerie" className={({isActive}) => isActive ? 'active' : undefined}>Galerie</NavLink></li>
+    <li><NavLink to="/calendrier" className={({isActive}) => isActive ? 'active' : undefined}>Calendrier</NavLink></li>
+    <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : undefined}>Contact</NavLink></li>
                 </ul>
             </div>
                                                        {/* COLONNE 3 DROITE  */}
@@ -53,7 +57,7 @@ function Myfooter() {
                    <ul>
                     <li><a href="#">Par telephone : 07 56 75 66 89 </a></li>
                     <li><a href="#">Par mail : eloquentia-lille@gmail.com</a></li>
-                    <li><a href="#">Page Contact</a></li>
+                    <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : undefined}>Page contact</NavLink></li>
                 </ul>
               
             </div>

@@ -6,7 +6,7 @@
 
 /* Bloc event du jour + autre event + timeline x2  */
 .CalendrierEvent{
-   background-color: rgb(216, 216, 216);
+   background-color: rgb(rgb(234, 239, 255));
    padding-bottom: 3%;
    padding-top: 3%;
 
@@ -21,6 +21,21 @@
         /* padding-right: 10%; */
 
  }
+
+.BannierePageCalendrier{
+  width: 100%;
+  color:#fff;
+
+  background: linear-gradient(to left,#d8197f,#4a139a,#1800ad);
+}
+.BannierePageCalendrier h1 {
+font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 49px;
+padding-top: 4%;}
+
  /* Bloc event du jour */
 .CalendrierTopCard{
       display: grid;
@@ -49,7 +64,7 @@ justify-content: end;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(180deg,#d8197f,#4a139a,#1800ad);
+  background: linear-gradient(to left,#d8197f,#4a139a,#1800ad);
   border: 1px solid #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
