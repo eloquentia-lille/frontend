@@ -1,0 +1,38 @@
+/* Element ligne degrade  */
+.timeline{
+    background: linear-gradient(
+    to bottom,
+    #d8197f,
+    #40143b 50%,
+    #4a139a 65%,
+    #1800ad 75%
+    );
+    /* background-color: rgb(255, 255, 255) ; */
+    
+
+    width: 12px;
+    min-height: 100%;
+    border-radius: 10px;
+    align-self: stretch;
+    position: relative;
+
+
+    /* position: fixed;
+    right: 4%;
+    top: 0;
+    bottom: 0;
+    width: 5vh;
+    border-radius: 10px;
+    z-index: 0;
+   */
+    
+    /* border-radius: 10px;
+    height: 95%;
+    width: 5vh;
+    margin: 0 auto;
+    gap: 20px; 
+    position: relative;
+    display: grid; 
+    grid-template-columns: 1fr 80px;  */
+}
+

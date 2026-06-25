@@ -9,12 +9,14 @@ import Calendrier from './pages/Calendrier';
 import Actualite from './pages/Actualite';
 import Galerie from './pages/Galerie';
 import Contact from './pages/Contact';
-
+import Myfooter from './components/footer';
 
 function App() {
 
   return (
-    <>
+
+    // div app-shell  = Pour que le footer reste en bas meme si pas assez de contenu sur la page
+    <div className="app-shell">
       <main className="app">
         <Header />
 
@@ -25,11 +27,12 @@ function App() {
           <Route path="/galerie" element={<Galerie />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
-
-        <Footer/>
+         <Myfooter />
       </main>
-    </>
+      
+      
+     
+    </div>
 
   );
 }

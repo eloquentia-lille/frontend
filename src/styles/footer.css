@@ -2,9 +2,13 @@
 
 .footer {
     width: 100%;
-    background: #25262A;
+    background: #0c0b34;
+        /* ancienne couleur
+        background: #25262A; */
+
     color: #dfdfdf;
-    position: absolute;
+    position: relative;
+    
 }
 
 .footer-content {
@@ -139,6 +143,11 @@
 .footer-2 ul li,
 .footer-2 ul li a {
     white-space: nowrap;
+}
+
+a.active, .active {
+  font-weight: 700;
+  color: #fff; /* ou la couleur souhaitée */
 }
 
 
