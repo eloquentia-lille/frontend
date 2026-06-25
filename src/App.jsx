@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header'
-import './App.css'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import './App.css';
+
 import Accueil from './pages/Accueil';
 import Calendrier from './pages/Calendrier';
 import Actualite from './pages/Actualite';
