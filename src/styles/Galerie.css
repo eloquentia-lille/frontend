@@ -1,0 +1,46 @@
+.side-column {
+    background-color: rgb(221, 227, 233);
+}
+
+.gallery-page {
+    display: grid;
+    grid-template-columns: 10vw 1fr 10vw;
+}
+
+.list-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+    margin: 1%;
+}
+
+.img-div {
+    height: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1300px) {
+    .gallery-page {
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    }
+
+    .list-card{
+        grid-template-columns: 1fr 1fr;
+        margin: 2%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .gallery-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+
+    .list-card{
+        grid-template-columns: 1fr;
+        margin: 2%;
+    }
+}
+
