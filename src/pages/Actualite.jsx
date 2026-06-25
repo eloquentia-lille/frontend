@@ -1,4 +1,5 @@
 import "../styles/Actualite.css";
+import "../styles/CardActuality.css";
 
 import Card from "../components/Card";
 import Presentation from "../components/Presentation";
@@ -70,6 +71,7 @@ function Actualite() {
     const listActu = actus.map((actu) => {
         return (
             <Card
+            variant="actuality"
             key={actu.id}
             titre={actu.titre}
             date={actu.date}

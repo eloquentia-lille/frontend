@@ -19,8 +19,17 @@
     margin: 1%;
 }
 
+.presentation-text{
+    text-align: center;
+    align-content: center;
+}
+
 @media screen and (max-width: 900px) {
     .presentation-bloc {
     height: 30vh;
+    }
+
+    .presentation-title{
+        text-align: center;
     }
 }
