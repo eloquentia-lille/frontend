@@ -48,3 +48,13 @@
 
     padding: 5px;
 }
+
+.btn-access:hover {
+    outline: 3px solid var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-access:focus {
+    outline: 3px solid var(--color-primary);
+    border-color: var(--color-primary);
+}
