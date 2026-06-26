@@ -20,7 +20,7 @@
 }
 
 .PageContactContent {
-    background-color: #d9eff0;
+    background-color: #eff6f7;
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
     width: 80%;
@@ -28,6 +28,7 @@
     justify-self: center;
     margin: 0%;
     padding: 2%;
+    border-radius: 5px;
 
 }
 
@@ -54,6 +55,14 @@ padding-bottom: 0%;
 .ContactInfos h3{
     padding-bottom: 2%;
 }
+
+.ContactInfosNumero,
+.ContactInfosMail {
+    font-weight: 700;
+    color: #a7255b;
+    margin-left: 4px;
+}
+
 .SocialMedia{
 /* background-color: #ececec; */
 width: 100%;
@@ -109,4 +118,19 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #8345a0;
+}
+
+
+
+@media (max-width: 1125px) {
+
+    .PageContactContent {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-2 ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

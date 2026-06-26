@@ -6,6 +6,9 @@ import facebook from '../assets/facebook-logo-facebook-icon-transparent-free-png
 import instagram from '../assets/instagram-logo-instagram-icon-transparent-free-png.webp'
 
 
+// Fonction contact = creer l'etat react pour les parametres du form (ne pas oublier d'importer useState)
+// pour l'instant vide ('') MAIS sera mis a jour quand l'utilisateur tape dans le champ 
+// utiliser setNom pour mettre a jour la valeur plus tard
 function Contact() {
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
@@ -13,19 +16,38 @@ function Contact() {
     const [motifPerso, setMotifPerso] = useState('');
     const [message, setMessage] = useState('');
 
+        // preventDefault empeche l'envoi des donnees / fonctionnement normal d'un form 
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        // choisir le motif
+        //  SI motif perso + message dans motifPerso alors Autres - est ajoute dans l'objet 
+        // Sinon on prend l'un des motifs proposes 
+        // ET si pas de motif on met "contact" (rendre motif obligatoire pour eviter dernier ligne ?)
         const finalMotif = motif === 'Autres' && motifPerso
             ? `${motif} - ${motifPerso}`
             : motif || 'Contact';
 
+        // subject = Objet du mail 
+        // body = message du mail 
+        // mailto = creation du lien mailto avec les donnees saisies 
+        // encodeURIComponent ajoute les donnees du form dans l'URL sans caracteres speciaux etc
+        // aussi possible de concatener avec + pour l'url 
+        // .trim = enleve les potentiels espaces en trop pour la mise en forme de l'objet 
         const subject = `${finalMotif} - ${nom} ${prenom}`.trim();
         const body = message || '';
         const mailto = `mailto:Eloquentia-lille@outlook.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+        // ouvre le logiciel mail 
         window.open(mailto);
     };
+
+
+    const contactInfos = {
+        numero: '06 67 76 96 15',
+        mail: 'Eloquentia-lille@outlook.fr',
+    };
+
 
     return (
         <>
@@ -38,7 +60,13 @@ function Contact() {
                 <div className="PageContactContent">
                     <div className='Colonne-1'>
                         <div className='ContactForm'>
-                            {/* <span>Formulaire</span> */}
+
+                                                                    {/* FORMULAIRE  */}
+
+   {/*  onChange= mise a jour de la valeur a chaque saisi / suppression de l'utilisateur */}
+{/* onSubmit={handleSubmit} = appel la const qui empeche l'envoie des donnees / refresh page */}
+{/* e.target.value = contenu du champ  */}
+{/* {motif === 'Autres' && ( si autres selectionne, ALORS rendu du nouveau champ  */}
 
                             <form onSubmit={handleSubmit} encType="text/plain">
                                 <label htmlFor="nom">Nom</label>
@@ -103,9 +131,15 @@ function Contact() {
                         <div className='ContactInfos'>
                             <h3>Nos informations de contact</h3>
                             <div>
-                            <p>Numero de telephone : 06 67 76 96 15</p> 
-                            <br />
-                            <p>E-mail : Eloquentia-lille@outlook.fr</p>
+                                <p>
+                                    Numéro de téléphone :
+                                    <span className='ContactInfosNumero'> {contactInfos.numero}</span>
+                                </p>
+                                <br />
+                                <p>
+                                    E-mail :
+                                    <span className='ContactInfosMail'> {contactInfos.mail}</span>
+                                </p>
                             </div>
                        
                            
