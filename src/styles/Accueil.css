@@ -1,0 +1,82 @@
+.home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50vh;
+
+    margin-bottom: 50vh;
+}
+
+/*Focus on all blocs *****************************/
+.preview-presentation, .preview-actu, .preview-event, .preview-gallery{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .2fr;
+    gap: 20px;
+}
+
+.impact-btn, .actu-btn, .event-btn, .gallery-btn{
+    display: grid;
+    grid-template-columns: repeat(8 1);
+
+    height: 2em;
+}
+
+.impact-link, .actu-link, .event-link, .gallery-link{
+    grid-column: 8/8;
+    display: grid;
+    justify-content: center;
+
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    outline: 2px solid white;
+
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+
+    padding: 2%;
+    width: 75%;
+}
+
+/*Focus on presentation bloc **********************************/
+.preview-presentation{
+    background-color: var(--color-tertiary-dk);
+    padding: 1%;
+}
+
+/*Focus on actuality bloc ************************************/
+.card-actuality {
+    display: grid;
+}
+
+/*Focus on event ********************************************/
+.preview-event {
+    background-color: var(--color-tertiary-dk);
+    padding: 2%;
+}
+
+
+/* Focus on gallery *****************************************/
+.card-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background-color: var(--color-tertiary-dk);
+
+    gap: 20px;
+}
+
+.card-description {
+    grid-column: 1/3;
+
+    display: grid;
+    align-items: center;
+}
+
+.card-gallery-preview {
+    grid-column: 3/3;
+}
+
+@media screen and (max-width: 900px) {
+    
+}

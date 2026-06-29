@@ -15,11 +15,6 @@
     margin: 1%;
 }
 
-.img-div {
-    height: 100%;
-    overflow: hidden;
-}
-
 @media screen and (max-width: 1300px) {
     .gallery-page {
     display: grid;

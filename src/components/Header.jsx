@@ -53,6 +53,12 @@ function Header() {
                     className={navClass}>
                         Accueil
                     </NavLink>
+
+                    <NavLink 
+                    to="/impact"
+                    className={navClass}>
+                        Notre Impact
+                    </NavLink>
                 
                     <NavLink 
                     to="/calendrier"

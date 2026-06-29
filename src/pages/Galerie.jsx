@@ -28,10 +28,13 @@ function Galerie() {
             <div className="side-column"></div>
 
             <div className="main-column">
-                <Presentation
-                title="Bienvenue dans les Galeries !"
-                text="Lorem ipsum c'est chouette !"
+                <div className="presentation-div">
+                    <Presentation
+                    title="Bienvenue dans les Galeries !"
+                    text="Lorem ipsum c'est chouette !"
                 />
+                </div>
+                
 
                 <div className="list-card">
                     {listGallery}

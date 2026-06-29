@@ -1,6 +1,6 @@
 .card.actuality {
     display: grid;
-    grid-template-columns: .5fr 1fr;
+    grid-template-columns: 250px 1fr;
     gap: 1em;
 
     background-color: rgb(222, 226, 228);
@@ -8,21 +8,19 @@
     border-style: solid;
     border-width: 1px;
     border-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
 
-    padding: 1%;
-
-    height: clamp(200px, 25vh, 500px)
+    padding-block: 2%;
+    padding-inline: 1%;
 }
 
 .img-div {
-    height: 100%;
     overflow: hidden;
 }
 
 .img-div.actuality img {
     width: 100%;
-    height: 100%;
+    height: 250px;
 
     border-style: none;
     border-radius: 20px;
@@ -30,20 +28,24 @@
     object-fit: cover;
 }
 
-.no-img {
+.no-img.actuality {
     background-color: rgba(0, 0, 0, 0.137);
     border-radius: 6em;
     
     width: 100%;
-    height:100%;
+    height:250px;
 }
 
 .text-div.actuality {
     display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: .5fr .5fr 1fr;
 
     padding: 1%;
 }
 
+.card-description.actuality{
+    padding: 1%;
+}
 
 

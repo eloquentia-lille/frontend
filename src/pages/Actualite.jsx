@@ -58,10 +58,13 @@ function Actualite() {
 
             <section className="main-column">
 
-                <Presentation 
-                title="Bienvenue sur la page des Actualités !"
-                text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sit illum nulla deleniti minima beatae, rem illo culpa sunt corporis dolor incidunt delectus voluptatibus! Dolore architecto quas repellendus praesentium impedit."
-                />
+                <div className="presentation-div">
+                    <Presentation 
+                    title="Bienvenue sur la page des Actualités !"
+                    text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam sit illum nulla deleniti minima beatae, rem illo culpa sunt corporis dolor incidunt delectus voluptatibus! Dolore architecto quas repellendus praesentium impedit."
+                    />
+                </div>
+                
                 <div className="select-div">
                     <label>
                         Actualités par page : 

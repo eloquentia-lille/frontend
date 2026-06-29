@@ -39,6 +39,7 @@ function Card(props) {
                         Voir galerie</button>
                 </div>
                 )}
+                
             </section>
         </>
     );

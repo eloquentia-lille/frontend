@@ -15,9 +15,6 @@
 
 }
 
-.EventCardContent h3{
- 
-}
 .EventCardContent p{
     padding: 10px 10px 10px;
     line-height: 1em;
@@ -28,9 +25,7 @@
 
 
 }
-.EventCardContent {
 
-}
 .EventCardTitle{
    padding: 10px 10px 10px;
     /* background-color: rgb(204, 204, 204); */
@@ -65,15 +60,20 @@ margin-bottom: -2%;}
 
 
 /* Ligne côté droit de la carte */
-.EventCard::after{
-        content: "";
-        position: absolute;
-        right: -30px;
-        top: 50%;
-        width: 40px;
-        height: 10px;
-        background: rgb(255, 255, 255) ;
-        border-radius: 4px;}
+.EventCard::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    width: 40px;
+    height: 10px;
+    background: rgb(255, 255, 255) ;
+    border-radius: 4px;
+}
+
+.EventCard.no-after::after {
+    display: none;
+}
 
 @media (max-width: 768px) {
     .EventCard::after{
@@ -81,8 +81,4 @@ margin-bottom: -2%;}
         width: 28px;
         height: 4px;
     }
-}
-
-.EventCardConnector{
-
 }
