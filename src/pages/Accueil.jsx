@@ -18,11 +18,20 @@ function Accueil() {
 
     return (
         <section className="home-page">
+            
             <div className="hook-banner">
 
-                <h1 className="hook-title">Bienvenue sur Eloquentia Lille !</h1>
+                <h1 className="hook-title">
+                    Bienvenue sur Eloquentia Lille !
+                </h1>
+                
+                <div className="hook-text-container">
 
-                <p className="hook-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi deleniti commodi expedita cum, dolor molestias dicta necessitatibus.</p>
+                    <p className="hook-text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi deleniti commodi expedita cum, dolor molestias dicta necessitatibus.
+                    </p>
+                    
+                </div>
 
             </div>
 
@@ -39,7 +48,7 @@ function Accueil() {
                     <Link
                     to="/impact"
                     className="impact-link">
-                        Découvrir notre équipe
+                        Découvrir notre équipe !
                     </Link>
 
                 </div>
@@ -47,16 +56,31 @@ function Accueil() {
             </div>
 
             <div className="preview-actu">
+
                 <div className="card-actuality">
 
                     <div className="actu-indent">
+
                         <Presentation
                         title="On partage régulièrement des news"
                         text="Lorem c'est super chouette cette semaine, ipsum."
                         />
+
+                        <div className="actu-btn">
+
+                            <Link
+                            to={"/actualite"}
+                            className="actu-link"
+                            >
+                                Découvrirs nos actualités !
+                            </Link>
+
+                        </div>
+
                     </div>
 
-                    <div className="card-actu-indent">
+                    <div className="card-actu-preview">
+
                         <Card
                         variant="actuality"
                         key={actu.id}
@@ -66,19 +90,8 @@ function Accueil() {
                         img={actu.img}
                         imgAlt={actu.imgAlt}
                         />
+                        
                     </div>
-
-                </div>
-                
-
-                <div className="actu-btn">
-
-                    <Link
-                    to={"/actuality"}
-                    className="actu-link"
-                    >
-                        Découvrirs nos actualités
-                    </Link>
 
                 </div>
                 
@@ -86,35 +99,61 @@ function Accueil() {
 
             <div className="preview-event">
 
-                <MyEventCard
-                titre={event.titre}
-                date={event.date}
-                description={event.description}
-                auteur={event.auteur}
-                noAfter="no"
-                />
-                
-                <div className="event-btn">
+                <div className="event-presentation">
 
-                    <Link
-                    to={"/calendrier"}
-                    className="event-link"
-                    >
-                        Découvrirs nos prochains événements
-                    </Link>
+                    <Presentation 
+                    title="On organise régulièrement des événements !"
+                    text="Lorem les événements chez nous, ipsum."
+                    />
+
+                    <div className="event-btn">
+
+                        <Link
+                        to={"/calendrier"}
+                        className="event-link"
+                        >
+                            Découvrirs nos prochains événements !
+                        </Link>
+
+                    </div>
 
                 </div>
+
+                <div className="event-card-preview">
+
+                    <MyEventCard
+                    titre={event.titre}
+                    date={event.date}
+                    description={event.description}
+                    auteur={event.auteur}
+                    noAfter="no"
+                    />
+
+                </div>
+                
             </div>
 
             <div className="preview-gallery">
+
                 <div className="card-gallery">
 
-                    <div className="card-description">
+                    <div className="card-gallery-presentation">
 
                         <Presentation 
-                        title="Voici ma galerie"
+                        title="On a fait plein de choses !"
                         text="Lorem ipsum c'est très la nostalgie."
                         />
+
+                        <div className="gallery-btn">
+
+                            <Link
+                            to={"/galerie"}
+                            className="gallery-link"
+                            >
+                                Découvrirs nos événements passés !
+                            </Link>
+
+                        </div>
 
                     </div>
 
@@ -135,16 +174,7 @@ function Accueil() {
 
                 </div>
                 
-                <div className="gallery-btn">
-
-                    <Link
-                    to={"/gallery"}
-                    className="gallery-link"
-                    >
-                        Découvrirs nos événements passés
-                    </Link>
-
-                </div>
+                
             </div>
         </section>
         

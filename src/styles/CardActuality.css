@@ -39,9 +39,12 @@
 .text-div.actuality {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .5fr .5fr 1fr;
 
     padding: 1%;
+}
+
+.text-div.actuality > * {
+    grid-column: 1;
 }
 
 .card-description.actuality{
@@ -49,3 +52,10 @@
 }
 
 
+@media screen and (max-width: 900px) {
+
+    .card.actuality{
+        grid-template-columns: 1fr;
+        
+    }
+}
