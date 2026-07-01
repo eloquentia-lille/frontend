@@ -1,0 +1,191 @@
+/*
+TODO
+- Corriger les boutons de preview
+- améliorer l'affichage de la carte galerie
+- préparer bannière d'accroche
+- check tout responsive
+- check les accessibilités (aria)
+*/
+
+.home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50vh;
+
+    margin-bottom: 50vh;
+}
+
+.hook-banner{
+    background-image: url(/img_test/landscape.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 70vh;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    padding-block: 5%;
+}
+
+.hook-title{
+    grid-column: 2/8;
+    grid-row: 1/2;
+
+    font-size: 4em;
+
+    padding: 2%;
+}
+
+.hook-text-container{
+    grid-column: 4/10;
+    grid-row: 2/3;
+
+    background-color: rgba(255, 255, 255, 0.568);
+    border-radius: 20px;
+    
+    padding: 5%;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.hook-text{
+    font-size: 2em;
+    color: black;
+}
+
+/*Focus on all blocs *****************************/
+.preview-presentation, .preview-actu, .preview-event, .preview-gallery{
+    display: grid;
+
+    gap: 40px;
+    padding-bottom: 30px;
+
+    background-color: var(--color-tertiary-dk);
+}
+
+.impact-btn, .actu-btn, .event-btn, .gallery-btn{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+/*Focus on all buttons (links) to pages previewed ************/
+.impact-link, .actu-link, .event-link, .gallery-link{
+    grid-column: 7/10;
+    display: grid;
+    justify-content: center;
+
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    outline: 2px solid white;
+
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+
+    padding: 5px;
+
+    height: clamp(2em, 4em);
+}
+
+/*Focus on presentation bloc **********************************/
+
+
+/*Focus on actuality bloc ************************************/
+
+.card-actuality {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 20px;
+}
+
+.actu-indent {
+    grid-column: 1/7;
+}
+
+.card-actu-preview {
+    grid-column: 2/7;
+
+    padding-right: 5%;
+}
+
+.actu-btn {
+    background-color: var(--color-tertiary-dk);
+}
+
+/*Focus on event ********************************************/
+.event-card-preview{
+    display: grid;
+    justify-content: center;
+}
+
+
+/* Focus on gallery *****************************************/
+.card-gallery {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    background-color: var(--color-tertiary-dk);
+
+    gap: 20px;
+}
+
+.card-gallery-presentation {
+    grid-column: 1/7;
+
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.card-gallery-preview {
+    grid-column: 7/11;
+
+    padding: 5% 5% 0;
+}
+
+.gallery-link {
+    grid-column: 8/11;
+}
+
+@media screen and (max-width: 900px) {
+    /*Focus on hook *****************************/
+    .hook-banner{
+        background-size: cover;
+    }
+
+    .hook-title{
+        grid-column: 1/11;
+    }
+
+    .hook-text-container{
+        grid-column: 2/10;
+    }
+
+    /*Focus buttons *****************************/
+    .impact-link, .actu-link, .event-link, .gallery-link{
+    grid-column: 3/9;
+    }
+
+    /*Focus on actu *******************************/
+    .card-actu-preview {
+        grid-column: 2/6;
+        padding: 0%;
+    }
+
+    /*Focus on events *****************************/
+
+    /*Focus on gallery ****************************/
+
+    .card-gallery-presentation {
+        grid-column: 2/10;
+    }
+
+    .card-gallery-preview{
+        grid-column: 2/10;
+    }
+}

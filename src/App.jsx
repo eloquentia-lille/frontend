@@ -10,6 +10,7 @@ import Actualite from './pages/Actualite';
 import Galerie from './pages/Galerie';
 import Contact from './pages/Contact';
 import Myfooter from './components/footer';
+import Impact from "./pages/Impact";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Accueil />} />
+          <Route path="/impact" element={<Impact />} />
           <Route path="/calendrier" element={<Calendrier />} />
           <Route path="/actualite" element={<Actualite />} />
           <Route path="/galerie" element={<Galerie />} />

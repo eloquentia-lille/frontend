@@ -6,7 +6,9 @@ function Presentation(props) {
         <section className="presentation-bloc">
             <h3 className="presentation-title">{props.title}</h3>
 
-            <p className="presentation-text">{props.text}</p>
+            <div className="presentation-banner">
+                <p className="presentation-text">{props.text}</p>
+            </div>
         </section>
     );
 }

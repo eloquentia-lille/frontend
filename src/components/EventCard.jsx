@@ -1,22 +1,22 @@
 import '../styles/EventCard.css'
 
-function MyEventCard({ titre = 'Titre événement', date = 'Date', description = 'Description', auteur }) {
+function MyEventCard(props) {
 
   return (
     <>
-      <div className='EventCard'>
+      <div className={`EventCard ${props.noAfter ? "no-after" : ""}`}>
         <div className='EventCardConnector' />
 
         <div className='EventCardContent'>
 
           <div className='EventCardTitle'>
-            <h3>{date}</h3>
-            <h3>{titre}</h3>
+            <h3>{props.date}</h3>
+            <h3>{props.titre}</h3>
           </div>
 
           <div className='EventCardDescription'>
-            <p>{description}</p>
-            {auteur && <p>Par {auteur}</p>}
+            <p>{props.description}</p>
+            {props.organisateur && <p>Par {props.organisateur}</p>}
           </div>
 
           <div className='ButtonContent'>
