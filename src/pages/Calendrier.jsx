@@ -47,10 +47,42 @@ function Calendrier() {
                     )}
                 </div>
 
-                <div className="TimelineBall">
-                    <div className="timeline-dot" />
-                </div>
+                <div className="CalendrierEvent">
+                    <div className="CalendrierTopEvent">
 
+
+                        <div className="CalendrierTopCard">
+                            {event[0] ? (
+                                <MyEventCard
+                                    titre={event[0].titre}
+                                    date={event[0].date}
+                                    description={event[0].description}
+                                    auteur={event[0].auteur}
+                                />
+                            ) : (
+                                <MyEventCard />
+                            )}
+                        </div>
+
+                        <div className="TimelineBall">
+                            <div className="timeline-dot" />
+                        </div>
+
+                    </div>
+
+
+                    <div className="CalendrierGrid">
+                        <div className="CalendrierList">
+                            {eventList}
+                        </div>
+
+                        <div className="CalendrierTimeline">
+                            <MyTimeline />
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
 
             <div className="CalendrierGrid">
