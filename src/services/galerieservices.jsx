@@ -1,22 +1,8 @@
+import Galerie from "../pages/Galerie";
 
 
-let galeries = []
 
-export class Galerie {
-
-    constructor() {
-        this.id = 0;
-        this.titre = "";
-        this.description = "";
-        this.date = new Date(19700101);
-        this.image = "";
-        this.imageAlt = "";
-        this.label = "";
-
-    }
-}
-
-export class GalerieServices {
+class GalerieServices {
 
     constructor() {
     }
@@ -27,9 +13,26 @@ export class GalerieServices {
      * 
      * returns Array<Event>
      */
-    getAll() {
+    async getAll() {
+        let galeries = []
 
+        const url = "/test_data.json";
+
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result);
+            galeries = result;
+        } catch (error) {
+            console.error(error.message);
+        }
         return galeries;
+
     }
 
 
@@ -39,11 +42,26 @@ export class GalerieServices {
      * 
      * returns Event
      */
-    getUUID(uuid) {
-        console.log(uuid);
-        return galeries;
+    async getUUID(uuid) {
+        let galerie = new Galerie();
+        const url = `/test_data.json/${uuid}`;
 
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result);
+            return galerie;
+
+        } catch (error) {
+            console.error(error.message);
+        }
     }
 
 
 }
+export default new GalerieServices(); 

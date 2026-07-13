@@ -1,23 +1,12 @@
+import Event from "../models/EventModel";
 
 
 
-let events = []
 
-export class Event {
 
-    constructor() {
-        this.id = 0;
-        this.titre = "";
-        this.description = "";
-        this.date = new Date(19700101);
-        this.localisation = "";
-        this.duree = 120;
-        this.intervenant = "";
 
-    }
-}
 
-export class EventServices {
+class EventServices {
 
     constructor() {
     }
@@ -29,11 +18,27 @@ export class EventServices {
      * 
      * returns Array<Event>
      */
-    getAll() {
+    async getAll() {
+        let events = []
 
+        const url = "/test_data.json";
+
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result);
+            events = result;
+        } catch (error) {
+            console.error(error.message);
+        }
         return events;
-    }
 
+    }
 
 
     /** 
@@ -41,11 +46,27 @@ export class EventServices {
      * 
      * returns Event
      */
-    getUUID(uuid) {
-        console.log(uuid);
-        return events;
+    async getUUID(uuid) {
 
+        let event = new Event();
+        const url = `/test_data.json/${uuid}`;
+
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result);
+        } catch (error) {
+            console.error(error.message);
+            return event;
+        }
     }
 
 
+
 }
+export default new EventServices(); 

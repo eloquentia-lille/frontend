@@ -1,22 +1,8 @@
+import Actualite from "../pages/Actualite";
 
 
-let actualites = []
 
-export class Actualite {
-
-    constructor() {
-        this.id = 0;
-        this.titre = "";
-        this.description = "";
-        this.date = new Date(19700101);
-        this.image = "";
-        this.imageAlt = "";
-        this.label = "";
-
-    }
-}
-
-export class ActualiteServices {
+class ActualiteServices {
 
     constructor() {
     }
@@ -27,11 +13,30 @@ export class ActualiteServices {
      * 
      * returns Array<Event>
      */
-    getAll() {
+    async getAll() {
+        let actualites = []
 
+        const url = "/test_data.json";
+
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result);
+            console.log("blablalb actu");
+
+            actualites = result;
+
+        } catch (error) {
+            console.error(error.message);
+        }
         return actualites;
-    }
 
+    }
 
 
     /** 
@@ -39,11 +44,28 @@ export class ActualiteServices {
      * 
      * returns Event
      */
-    getUUID(uuid) {
-        console.log(uuid);
-        return actualites;
+    async getUUID(uuid) {
+        let actualite = new Actualite();
+        const url = `/test_data.json/${uuid}`;
+
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result);
+            actualite = result;
+
+        } catch (error) {
+            console.error(error.message);
+        }
+        return actualite;
 
     }
 
 
 }
+export default new ActualiteServices(); 
