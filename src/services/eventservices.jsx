@@ -21,7 +21,7 @@ class EventServices {
     async getAll() {
         let events = []
 
-        const url = "/test_data.json";
+        const url = "/api/event";
 
         try {
             const response = await fetch(url, {
@@ -49,7 +49,7 @@ class EventServices {
     async getUUID(uuid) {
 
         let event = new Event();
-        const url = `/test_data.json/${uuid}`;
+        const url = `/api/event/${uuid}`;
 
         try {
             const response = await fetch(url, {

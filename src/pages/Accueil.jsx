@@ -44,24 +44,24 @@ function Accueil() {
     useEffect(() => {
         const loadEvents = async () => {
             const data = await EventServices.getAll();
-            console.log(data.events[0])
-            setEvent(data.events[0] || []);
+            const items = Array.isArray(data) ? data : data?.events || [];
+            setEvent(items[0] || []);
 
         };
 
 
         const loadActus = async () => {
             const data = await ActualiteServices.getAll();
-            console.log(data.actuality[0])
-            setActu(data.actuality[0] || []);
+            const items = Array.isArray(data) ? data : data?.actuality || [];
+            setActu(items[0] || []);
 
         };
 
 
         const loadGalleries = async () => {
             const data = await GalerieServices.getAll();
-            console.log(data.gallery[0])
-            setGallery(data.gallery[0] || []);
+            const items = Array.isArray(data) ? data : data?.gallery || [];
+            setGallery(items[0] || []);
 
         };
 
@@ -140,12 +140,12 @@ function Accueil() {
 
                         <Card
                             variant="actuality"
-                            key={actu.id}
+                            key={actu.uuid || actu.id}
                             titre={actu.titre}
-                            date={formatDate(actu.date)}
+                            date={formatDate(actu.dateDebut || actu.date)}
                             description={actu.description}
-                            img={actu.img}
-                            imgAlt={actu.imgAlt}
+                            img={actu.imageSrc || actu.img}
+                            imgAlt={actu.imageAlt || actu.imgAlt}
                         />
 
                     </div>
@@ -180,9 +180,9 @@ function Accueil() {
 
                     <MyEventCard
                         titre={event.titre}
-                        date={formatDate(event.date)}
+                        date={formatDate(event.dateDebut || event.date)}
                         description={event.description}
-                        auteur={event.auteur}
+                        auteur={event.organisateur || event.auteur}
                         noAfter="no"
                     />
 
@@ -218,13 +218,13 @@ function Accueil() {
 
                         <Card
                             variant="gallery"
-                            key={gallery.id}
+                            key={gallery.uuid || gallery.id}
                             titre={gallery.titre}
-                            date={formatDate(gallery.date)}
+                            date={formatDate(gallery.dateDebut || gallery.date)}
                             description={gallery.description}
-                            img={gallery.img}
-                            label={gallery.label}
-                            imgAlt={gallery.imgAlt}
+                            img={gallery.imageSrc || gallery.img}
+                            label={gallery.imageLabel || gallery.label}
+                            imgAlt={gallery.imageAlt || gallery.imgAlt}
                         />
 
                     </div>

@@ -15,8 +15,16 @@ function Galerie() {
     useEffect(() => {
         const loadGalleries = async () => {
             const data = await GalerieServices.getAll();
-            console.log(data.gallery)
-            setGalleries(data.gallery`` || []);
+            // verifie si c'est tableau, sinon prends data.actualities, sinon tableau vide 
+            let items = [];
+            if (Array.isArray(data)) {
+                items = data;
+            } else if (data?.gallery) {
+                items = data.gallery;
+            } else {
+                items = [];
+            }
+            setGalleries(items || []);
 
         };
 
