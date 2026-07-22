@@ -16,7 +16,7 @@ class ActualiteServices {
     async getAll() {
         let actualites = []
 
-        const url = "/test_data.json";
+        const url = "/api/actuality";
 
         try {
             const response = await fetch(url, {
@@ -46,7 +46,7 @@ class ActualiteServices {
      */
     async getUUID(uuid) {
         let actualite = new Actualite();
-        const url = `/test_data.json/${uuid}`;
+        const url = `/api/actuality/${uuid}`;
 
         try {
             const response = await fetch(url, {

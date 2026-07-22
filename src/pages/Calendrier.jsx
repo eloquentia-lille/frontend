@@ -11,8 +11,15 @@ function Calendrier() {
     useEffect(() => {
         const loadEvents = async () => {
             const data = await EventServices.getAll();
-            console.log(data.events)
-            setEvents(data.events || []);
+            let items = [];
+            if (Array.isArray(data)) {
+                items = data;
+            } else if (data?.events) {
+                items = data.events;
+            } else {
+                items = [];
+            }
+             setEvents(items || []);
 
         };
 
@@ -30,7 +37,7 @@ function Calendrier() {
                 titre={event.titre}
                 date={event.date}
                 description={event.description}
-                organisateur={event.organisateur}
+                organisateur={event.intervenant}
             />
         );
     });

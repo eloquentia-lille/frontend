@@ -16,7 +16,7 @@ class GalerieServices {
     async getAll() {
         let galeries = []
 
-        const url = "/test_data.json";
+        const url = "/api/gallery";
 
         try {
             const response = await fetch(url, {
@@ -44,7 +44,7 @@ class GalerieServices {
      */
     async getUUID(uuid) {
         let galerie = new Galerie();
-        const url = `/test_data.json/${uuid}`;
+        const url = `/api/gallery/${uuid}`;
 
         try {
             const response = await fetch(url, {
