@@ -1,12 +1,12 @@
 function Card(props) {
     let image = null;
 
-    if(props.img) {
+    if (props.image?.src) {
         image = (
             <img 
-            src={props.img}
-            aria-label={props.label}
-            alt={props.imgAlt}
+            src={props.image.src}
+            aria-label={props.image.label}
+            alt={props.image.alt}
             />
         );
     }

@@ -2,14 +2,17 @@
 class Actualite {
 
     constructor() {
-        this.uuid = 0;
+        this.uuid = "";
         this.titre = "";
         this.description = "";
-        this.date = new Date(19700101);
-        this.image = "";
-        this.imageAlt = "";
-        this.label = "";
-        this.publication = "false";
+        this.dateDebut = new Date(19700101);
+        this.dateFin = null;
+        this.image = {
+            src: "",
+            alt: "",
+            label: ""
+        };
+        this.publication = false;
 
     }
 }

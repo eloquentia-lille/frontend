@@ -1,13 +1,19 @@
  class Event {
 
     constructor() {
-        this.uuid = 0;
+        this.uuid = "";
         this.titre = "";
         this.description = "";
-        this.date = new Date(19700101);
+        this.dateDebut = new Date(19700101);
+        this.dateFin = null;
         this.localisation = "";
         this.duree = 120;
         this.intervenant = "";
+        this.image = {
+            src: "",
+            alt: "",
+            label: ""
+        };
     }
 
 }

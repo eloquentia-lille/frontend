@@ -29,7 +29,15 @@ class ActualiteServices {
             console.log(result);
             console.log("blablalb actu");
 
-            actualites = result;
+            if (Array.isArray(result)) {
+                actualites = result;
+            } else if (Array.isArray(result?.actualities)) {
+                actualites = result.actualities;
+            } else if (Array.isArray(result?.actuality)) {
+                actualites = result.actuality;
+            } else {
+                actualites = [];
+            }
 
         } catch (error) {
             console.error(error.message);

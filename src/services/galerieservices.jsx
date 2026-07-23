@@ -27,7 +27,15 @@ class GalerieServices {
             }
             const result = await response.json();
             console.log(result);
-            galeries = result;
+            if (Array.isArray(result)) {
+                galeries = result;
+            } else if (Array.isArray(result?.gallery)) {
+                galeries = result.gallery;
+            } else if (Array.isArray(result?.galleries)) {
+                galeries = result.galleries;
+            } else {
+                galeries = [];
+            }
         } catch (error) {
             console.error(error.message);
         }

@@ -16,17 +16,7 @@ function Actualite() {
     useEffect(() => {
         const loadActus = async () => {
             const data = await actualiteservices.getAll();
-            // verifie si c'est tableau, sinon prends data.actualities, sinon tableau vide 
-            // erreur car la valeur n'est utilisee avant d'etre ecrasee 
-            let items = [];
-            if (Array.isArray(data)) {
-                items = data;
-            } else if (data?.actualities) {
-                items = data.actualities;
-            } else {
-                items = [];
-            }
-            setActus(items || []);
+            setActus(data || []);
 
         };
 
@@ -42,8 +32,7 @@ function Actualite() {
                 titre={actu.titre}
                 date={actu.dateDebut || actu.date}
                 description={actu.description}
-                img={actu.imageSrc || actu.img}
-                imgAlt={actu.imageAlt || actu.imgAlt}
+                image={actu.image}
             />
         );
     });

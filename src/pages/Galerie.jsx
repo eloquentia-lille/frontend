@@ -15,16 +15,7 @@ function Galerie() {
     useEffect(() => {
         const loadGalleries = async () => {
             const data = await GalerieServices.getAll();
-            // verifie si c'est tableau, sinon prends data.actualities, sinon tableau vide 
-            let items = [];
-            if (Array.isArray(data)) {
-                items = data;
-            } else if (data?.gallery) {
-                items = data.gallery;
-            } else {
-                items = [];
-            }
-            setGalleries(items || []);
+            setGalleries(data || []);
 
         };
 
@@ -37,13 +28,11 @@ function Galerie() {
         return (
             <Card
                 variant="gallery"
-                key={gallery.id}
+                key={gallery.uuid}
                 titre={gallery.titre}
                 date={gallery.date}
                 description={gallery.description}
-                img={gallery.img}
-                label={gallery.label}
-                imgAlt={gallery.imgAlt}
+                image={gallery.image}
             />
         );
     })

@@ -32,7 +32,15 @@ class EventServices {
             }
             const result = await response.json();
             console.log(result);
-            events = result;
+            if (Array.isArray(result)) {
+                events = result;
+            } else if (Array.isArray(result?.events)) {
+                events = result.events;
+            } else if (Array.isArray(result?.event)) {
+                events = result.event;
+            } else {
+                events = [];
+            }
         } catch (error) {
             console.error(error.message);
         }

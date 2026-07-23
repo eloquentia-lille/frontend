@@ -44,24 +44,21 @@ function Accueil() {
     useEffect(() => {
         const loadEvents = async () => {
             const data = await EventServices.getAll();
-            const items = Array.isArray(data) ? data : data?.events || [];
-            setEvent(items[0] || []);
+            setEvent(data[0] || []);
 
         };
 
 
         const loadActus = async () => {
             const data = await ActualiteServices.getAll();
-            const items = Array.isArray(data) ? data : data?.actuality || [];
-            setActu(items[0] || []);
+            setActu(data[0] || []);
 
         };
 
 
         const loadGalleries = async () => {
             const data = await GalerieServices.getAll();
-            const items = Array.isArray(data) ? data : data?.gallery || [];
-            setGallery(items[0] || []);
+            setGallery(data[0] || []);
 
         };
 
@@ -144,8 +141,7 @@ function Accueil() {
                             titre={actu.titre}
                             date={formatDate(actu.dateDebut || actu.date)}
                             description={actu.description}
-                            img={actu.imageSrc || actu.img}
-                            imgAlt={actu.imageAlt || actu.imgAlt}
+                            image={actu.image}
                         />
 
                     </div>
@@ -222,9 +218,7 @@ function Accueil() {
                             titre={gallery.titre}
                             date={formatDate(gallery.dateDebut || gallery.date)}
                             description={gallery.description}
-                            img={gallery.imageSrc || gallery.img}
-                            label={gallery.imageLabel || gallery.label}
-                            imgAlt={gallery.imageAlt || gallery.imgAlt}
+                            image={gallery.image}
                         />
 
                     </div>

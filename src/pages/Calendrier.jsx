@@ -11,15 +11,7 @@ function Calendrier() {
     useEffect(() => {
         const loadEvents = async () => {
             const data = await EventServices.getAll();
-            let items = [];
-            if (Array.isArray(data)) {
-                items = data;
-            } else if (data?.events) {
-                items = data.events;
-            } else {
-                items = [];
-            }
-             setEvents(items || []);
+            setEvents(data || []);
 
         };
 
@@ -33,9 +25,9 @@ function Calendrier() {
     const eventList = events.map((event) => {
         return (
             <MyEventCard
-                key={event.id}
+                key={event.uuid}
                 titre={event.titre}
-                date={event.date}
+                date={event.dateDebut || event.date}
                 description={event.description}
                 organisateur={event.intervenant}
             />
@@ -58,7 +50,7 @@ function Calendrier() {
                         {events[0] ? (
                             <MyEventCard
                                 titre={events[0].titre}
-                                date={events[0].date}
+                                date={events[0].dateDebut || events[0].date}
                                 description={events[0].description}
                                 organisateur={events[0].organisateur}
                             />
