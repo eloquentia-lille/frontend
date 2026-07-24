@@ -16,7 +16,7 @@ function MyEventCard(props) {
 
           <div className='EventCardDescription'>
             <p>{props.description}</p>
-            {props.organisateur && <p>Par {props.organisateur}</p>}
+            {props.intervenant && <p>Par {props.intervenant}</p>}
           </div>
 
           <div className='ButtonContent'>

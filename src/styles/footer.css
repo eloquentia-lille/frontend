@@ -45,6 +45,12 @@
     margin-top: 5px;
 }
 
+/* Correction : ligne violette de lien sous les logo  */
+.social-icons a {
+    text-decoration: none;
+    line-height: 0;
+}
+
 .social-icons img{
     width: 70px;
     height: 70px;
