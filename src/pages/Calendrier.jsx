@@ -29,7 +29,7 @@ function Calendrier() {
                 titre={event.titre}
                 date={event.dateDebut || event.date}
                 description={event.description}
-                organisateur={event.intervenant}
+                intervenant={event.intervenant}
             />
         );
     });
@@ -52,7 +52,7 @@ function Calendrier() {
                                 titre={events[0].titre}
                                 date={events[0].dateDebut || events[0].date}
                                 description={events[0].description}
-                                organisateur={events[0].organisateur}
+                                intervenant={events[0].intervenant}
                             />
                         ) : (
                             <MyEventCard
