@@ -10,7 +10,6 @@
 .select-div {
     display: grid;
     justify-content: end;
-
     margin: 10px;
 
     font-size: 1em;
@@ -19,6 +18,8 @@
 .select-div select {
     margin-left: 5px;
     height: 30px;
+    padding: 0px;
+
     width: 50px;
 
     text-align: center;
@@ -38,8 +39,8 @@
 
 .page-button {
     display: grid;
-    grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
-    grid-template-rows: 1;
+    grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr ;
+    grid-template-rows: 1fr;
     gap: 10px;
 
     height: 10vh;
@@ -50,25 +51,26 @@
 }
 
 .btn-prec {
-    grid-column: 2/4;
-    grid-row: 1/1;
-    
+    grid-column: 2/3;
+    grid-row: 1/2;
+
 }
 
 .page-nb {
     grid-column: 3/4;
-    grid-row: 1/1;
+    grid-row: 1/2;
 
     display: grid;
     justify-content: center;
 }
 
 .btn-suiv {
-    grid-column: 4/4;
-    grid-row: 1/1;
+    grid-column: 4/5;
+    grid-row: 1/2;
 }
 
-.btn-prec, .btn-suiv {
+.btn-prec,
+.btn-suiv {
     background-color: var(--color-tertiary-dk);
     border-radius: 5px;
     border-color: black;
@@ -80,7 +82,8 @@
     width: 10rem;
 }
 
-.btn-prec:hover, .btn-suiv:hover {
+.btn-prec:hover,
+.btn-suiv:hover {
     outline: 3px solid white;
     background-color: var(--color-tertiary-hl);
     border-radius: 5px;
@@ -88,7 +91,8 @@
 
 @media screen and (max-width: 900px) {
     .actuality-page {
-    display: grid;
-    grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr;
     }
+
 }

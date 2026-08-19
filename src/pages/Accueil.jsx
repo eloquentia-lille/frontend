@@ -178,7 +178,7 @@ function Accueil() {
                         titre={event.titre}
                         date={formatDate(event.dateDebut || event.date)}
                         description={event.description}
-                        auteur={event.organisateur || event.auteur}
+                        intervenant={event.intervenant || event.organisateur || event.auteur}
                         noAfter="no"
                     />
 

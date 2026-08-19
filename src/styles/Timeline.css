@@ -36,3 +36,9 @@
     grid-template-columns: 1fr 80px;  */
 }
 
+@media (max-width: 768px) {
+    .timeline {
+        width: 8px;
+    }
+}
+

@@ -24,7 +24,6 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
     width: 80%;
-    height: 80ch;
     justify-self: center;
     margin: 0%;
     padding: 2%;
